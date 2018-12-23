@@ -5,7 +5,8 @@
       new Vue({
         el: '#app',
         data: {
-          title: 'Hello world'
+          title: 'Hello world',
+          link: 'http://google.com'
         },
         methods: {
           changeTitle(event) {
@@ -19,6 +20,7 @@
     <div id="app">
       <input type="text" v-on:input="changeTitle"></input>
       <p>{{ title }}</p>
+      <a v-bind:href="link">Google</a>
     </div>
   </body>
 </html>
