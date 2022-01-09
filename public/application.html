@@ -1,0 +1,68 @@
+<html>
+  <head>
+    <script src="vendor/vue.js"></script>
+    <script type="module">
+      Vue.config.performance = true
+    </script>
+  </head>
+  <body>
+    <div id="application">
+      <template v-for="program in programs">
+        <program v-bind:program="program"></program>
+      </template>
+      <button v-on:click="updatePrograms">Click me</button>
+    </div>
+
+    <script type="module">
+      import Program from './movida/Program.js'
+
+      const programs = [
+        { name: 'He-man' },
+        { name: 'Superman' },
+        { name: 'Titanic' },
+        { name: 'He-man' },
+        { name: 'Superman' },
+        { name: 'Titanic' },
+        { name: 'He-man' },
+        { name: 'Superman' },
+        { name: 'Titanic' },
+        { name: 'He-man' },
+        { name: 'Superman' },
+        { name: 'Titanic' }
+      ]
+
+      const newPrograms = [
+        { name: 'Program 1' },
+        { name: 'Program 2' },
+        { name: 'Program 3' },
+        { name: 'Program 1' },
+        { name: 'Program 2' },
+        { name: 'Program 3' },
+        { name: 'Program 1' },
+        { name: 'Program 2' },
+        { name: 'Program 3' },
+        { name: 'Program 1' },
+        { name: 'Program 2' },
+        { name: 'Program 3' }
+      ]
+
+      const vm = new Vue({
+        el: '#application',
+        components: { Program },
+        data() {
+          return {
+            // programs: Object.freeze(programs)
+            programs
+          }
+        },
+        methods: {
+          updatePrograms() {
+            this.programs = Object.freeze(newPrograms)
+          }
+        }
+      })
+
+      window.vm = vm
+    </script>
+  </body>
+</html>

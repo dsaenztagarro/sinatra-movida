@@ -1,3 +1,9 @@
-### sinatra-es6
+### sinatra-movida
 
-Proof of concept ES2015
+Replicates Movida Javascript ecosystem with simple examples
+
+```
+yarn add babel-loader --dev
+
+yarn run builddev
+```
